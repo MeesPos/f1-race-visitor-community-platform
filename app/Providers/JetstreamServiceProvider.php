@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Actions\Jetstream\DeleteUser;
+use App\Http\Responses\RegisterResponse;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Fortify\Contracts\RegisterResponse as RegisterResponseContract;
 use Laravel\Jetstream\Jetstream;
 
 class JetstreamServiceProvider extends ServiceProvider
@@ -28,6 +30,8 @@ class JetstreamServiceProvider extends ServiceProvider
         $this->configurePermissions();
 
         Jetstream::deleteUsersUsing(DeleteUser::class);
+
+        $this->registerResponseBindings();
     }
 
     /**
@@ -45,5 +49,15 @@ class JetstreamServiceProvider extends ServiceProvider
             'update',
             'delete',
         ]);
+    }
+
+    /**
+     * Register the response bindings.
+     *
+     * @return void
+     */
+    protected function registerResponseBindings()
+    {
+        $this->app->singleton(RegisterResponseContract::class, RegisterResponse::class);
     }
 }
