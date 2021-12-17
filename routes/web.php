@@ -31,4 +31,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->prefix('register')->group(function () {
     Route::get('personal-information', [PersonalInformationController::class, 'index'])->name('personal-information.index');
+    Route::post('personal-information', [PersonalInformationController::class, 'store'])->name('personal-information.store');
+
+    Route::get('profile-information')->name('profile-information.index');
 });
