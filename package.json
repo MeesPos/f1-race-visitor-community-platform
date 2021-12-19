@@ -29,6 +29,7 @@
         "@headlessui/vue": "^1.4.2",
         "@heroicons/vue": "^1.0.5",
         "@vueform/multiselect": "^2.3.1",
-        "countries-list": "^2.6.1"
+        "countries-list": "^2.6.1",
+        "i18n-iso-countries": "^7.2.0"
     }
 }
