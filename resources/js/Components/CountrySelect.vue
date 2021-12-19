@@ -7,7 +7,6 @@
         <Multiselect :options="countries"
             mode="single"
             :searchable="true"
-            placeholder="Where do you live?"
         />
     </Listbox>
 </template>
