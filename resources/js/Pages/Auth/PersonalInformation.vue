@@ -44,18 +44,12 @@
 
                             <div id="step1" class="mt-5" v-if="currentStep == 1">
                                 <div>
-                                    <label for="age" class="block text-sm font-medium text-gray-700">Age</label>
-
-                                    <div class="mt-1">
-                                        <input type="number"
-                                            name="age"
-                                            min="1"
-                                            max="125"
-                                            v-model="step1.age"
-                                            placeholder="How old are you?"
-                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        >
-                                    </div>
+                                    <InputNumber name="age"
+                                        label="Age"
+                                        :min="1"
+                                        :max="125"
+                                        placeholder="How old are you?"
+                                    />
                                 </div>
 
                                 <div class="mt-6">
@@ -96,17 +90,11 @@
                                 </div>
 
                                 <div class="mt-6">
-                                    <label for="description" class="block text-sm font-medium text-gray-700">
-                                        Biography
-                                    </label>
-                                    <div class="mt-1">
-                                        <textarea id="description"
-                                            name="description"
-                                            rows="3"
-                                            class="block w-full border border-blue-gray-300 rounded-md shadow-sm sm:text-sm focus:ring-blue-500 focus:border-blue-500"
-                                        />
-                                    </div>
-                                    <p class="mt-3 text-sm text-blue-gray-500">Tell something nice about yourself!</p>
+                                    <Textarea name="bio"
+                                        label="Biography"
+                                        :rows="3"
+                                        tooltip="Tell something nice about yourself!"
+                                    />
                                 </div>
 
                                 <div class="text-right mt-5">
@@ -134,6 +122,8 @@
 <script>
 import { Dialog, DialogOverlay, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
 import CountrySelect from "../../Components/CountrySelect";
+import InputNumber from "../../Components/InputNumber";
+import Textarea from "../../Components/Textarea";
 
 export default {
     name: "PersonalInformation",
@@ -163,6 +153,8 @@ export default {
         }
     },
     components: {
+        Textarea,
+        InputNumber,
         CountrySelect,
         Dialog,
         DialogOverlay,
