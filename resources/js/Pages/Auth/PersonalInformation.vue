@@ -144,17 +144,12 @@ export default {
             ]
         }
     },
+    ready: function () {
+        console.log('ready')
+    },
     methods: {
         goToStep: function (step) {
             this.currentStep = step;
-
-            if(step === 1) {
-                this.steps[0].status = 'current';
-                this.steps[1].status = 'upcoming';
-            } else if(step === 2) {
-                this.steps[0].status = 'complete';
-                this.steps[1].status = 'current';
-            }
         }
     },
     components: {

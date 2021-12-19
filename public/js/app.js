@@ -23801,17 +23801,12 @@ __webpack_require__.r(__webpack_exports__);
       }]
     };
   },
+  ready: function ready() {
+    console.log('ready');
+  },
   methods: {
     goToStep: function goToStep(step) {
       this.currentStep = step;
-
-      if (step === 1) {
-        this.steps[0].status = 'current';
-        this.steps[1].status = 'upcoming';
-      } else if (step === 2) {
-        this.steps[0].status = 'complete';
-        this.steps[1].status = 'current';
-      }
     }
   },
   components: {
@@ -24703,7 +24698,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Multiselect, {
         options: $options.countries,
         mode: "single",
-        searchable: true
+        searchable: true,
+        placeholder: "Where do you live?"
       }, null, 8
       /* PROPS */
       , ["options"])];
