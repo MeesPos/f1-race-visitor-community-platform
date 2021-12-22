@@ -16,7 +16,8 @@ module.exports = {
             },
             colors: {
                 f1: {
-                    dark: '#15151e'
+                    dark: '#15151e',
+                    red: '#e10600'
                 }
             }
         },
